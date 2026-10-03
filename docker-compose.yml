@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=swachhai_docker_secret_key_2026
+      - DATABASE_URL=sqlite:///./swachhai.db
+    volumes:
+      - swachhai_data:/app/uploads
+
+volumes:
+  swachhai_data:
