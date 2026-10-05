@@ -77,31 +77,86 @@ flowchart TD
 ## 5. Quick Start (Running Locally)
 
 ### Prerequisites
-- Python 3.12+
-- Node.js 18+ and npm
 
-### Step 1: Clone & Setup Backend
+Make sure the following are installed:
+
+- Python 3.12+
+- Node.js 18+
+- npm
+- Git
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/Gokulakrishnan200005/SwachhAI.git
+cd SwachhAI
+```
+
+### Step 2: Install Root Dependencies
+
+```bash
+npm install
+```
+
+### Step 3: Install Frontend Dependencies
+
+```bash
+cd frontend
+npm install
+cd ..
+```
+
+### Step 4: Setup Backend
+
+Create and configure the Python virtual environment:
+
 ```bash
 cd backend
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+cd ..
 ```
 
-### Step 2: Run Backend Server
-```bash
-# Starts backend with pre-seeded demo database at http://localhost:8000
-PYTHONPATH=. ./venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-```
-API Documentation is available at `http://localhost:8000/docs`.
+### Step 5: Run Frontend + Backend with One Command
 
-### Step 3: Run Frontend
+From the project root:
+
 ```bash
-cd ../frontend
-npm install
-npm run dev -- --host 0.0.0.0 --port 5173
+npm run dev
 ```
-The application will be accessible at `http://localhost:5173`.
+
+This command automatically starts both the frontend and backend using `concurrently`.
+
+### Application URLs
+
+**Frontend:**
+
+```text
+http://localhost:5173/
+```
+
+**Backend API:**
+
+```text
+http://localhost:8000/
+```
+
+**Interactive API Documentation:**
+
+```text
+http://localhost:8000/docs
+```
+
+### Stop the Application
+
+Press:
+
+```text
+Ctrl + C
+```
+
+This stops both the frontend and backend processes.
 
 ---
 
@@ -115,8 +170,6 @@ PYTHONPATH=. ./venv/bin/pytest tests -v
 ```
 
 All 13 tests execute and pass out-of-the-box.
-
----
 
 ## 7. Demo Mode & Demo Credentials
 

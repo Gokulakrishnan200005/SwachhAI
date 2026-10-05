@@ -1,0 +1,25 @@
+{
+  "name": "swachhai",
+  "version": "1.0.0",
+  "description": "SwachhAI - AI-Powered Waste Segregation, Collection Verification & Hotspot Intelligence",
+  "main": "index.js",
+  "scripts": {
+    "frontend": "cd frontend && npm run dev",
+    "backend": "cd backend && ./venv/bin/uvicorn app.main:app --reload",
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gokulakrishnan200005/SwachhAI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gokulakrishnan200005/SwachhAI/issues"
+  },
+  "homepage": "https://github.com/Gokulakrishnan200005/SwachhAI",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
